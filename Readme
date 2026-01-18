@@ -1,0 +1,106 @@
+# 🧠 Reasoning & Planning Agents  
+_From Memory to Deliberate Autonomy_
+
+This repository explores **reasoning and planning as core cognitive capabilities** in AI agents.
+
+Rather than focusing on prompt tricks or tool orchestration, this work treats agents as **decision-making systems** that:
+- learn from past outcomes
+- reuse successful strategies
+- avoid repeated failures
+- decompose goals into executable plans
+- reason explicitly before acting
+- plan across long time horizons
+
+These projects build on prior work in memory agents and move toward **agents that can think, decide, and adapt over time**.
+
+---
+
+## Why This Repository Exists
+
+Most agents today:
+- react to prompts
+- execute tasks independently
+- plan from scratch every time
+- repeat the same failures
+- lack internal judgment
+
+Humans don’t work this way.
+
+We rely on:
+- memory-conditioned strategies
+- explicit reasoning
+- goal decomposition
+- failure avoidance
+- long-horizon planning
+
+This repository is an attempt to **engineer those cognitive loops explicitly**.
+
+---
+
+## What This Repo Is (and Isn’t)
+
+**This repo is:**
+- a study of agent cognition
+- architecture-first
+- outcome-driven
+- transparent and inspectable
+
+**This repo is not:**
+- a chatbot demo
+- a prompt engineering cookbook
+- a framework wrapper
+- a production SaaS
+
+---
+
+## Project Map
+
+Each project isolates one core planning or reasoning capability, while remaining composable into a larger cognitive system.
+
+1. **Memory-Conditioned Planner**  
+   Plans are scored and selected based on past outcomes.
+
+2. **Explicit Reasoning Loop Agent**  
+   Reasoning is structured, evidence-backed, and auditable.
+
+3. **Goal Decomposition Planner**  
+   Long-term goals are broken into executable subgoals.
+
+4. **Strategy Selection Agent**  
+   Agents reuse, adapt, and retire strategies over time.
+
+5. **Failure-Aware Planner**  
+   Failures are categorized, remembered, and avoided.
+
+6. **Long-Horizon Planning Agent**  
+   Agents plan, monitor, and adapt across extended timelines.
+
+Each project has its own detailed design document and implementation notes.
+
+---
+
+## Design Principles
+
+- Reasoning is explicit, not implicit
+- Planning is evaluated, not assumed
+- Memory shapes decisions, not just recall
+- Failures are first-class learning signals
+- Every decision leaves a trace
+
+---
+
+## How to Use This Repo
+
+- Start with Project 1 and move sequentially  
+- Each project can run independently  
+- Together, they form a progressively richer cognitive architecture
+
+---
+
+## Big Picture
+
+Memory answers: *What happened?*  
+Reasoning answers: *Why did it happen?*  
+Planning answers: *What should I do next?*  
+
+This repository is about **closing that loop**.
