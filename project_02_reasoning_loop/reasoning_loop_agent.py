@@ -79,3 +79,69 @@ class EvidenceStore:
         return [e for _, e in scored[:top_k]]
 
 # ---------- Hypothesis Memory ----------
+
+class HypothesisMemory:
+    def __init__(self):
+        self.rejected = {}
+
+    def reject(self, hypothesis: str, reason: str):
+        self.rejected[hypothesis] = reason
+
+# ---------- Reasoning Agent ----------
+
+class ExplicitReasoningAgent:
+    def __init__(self, evidence_store, hypothesis_memory):
+        self.evidence_store = evidence_store
+        self.hypothesis_memory = hypothesis_memory
+
+    def observe(self, question, context_tags):
+        return Observation(question, context_tags)
+
+    def generate_hypotheses(self, observation):
+        q = observation.question.lower()
+        if "api" in q:
+            return [
+                "The API is failing due to authentication issues",
+                "The API is failing due to rate limiting",
+                "The API is failing due to a server-side bug"
+            ]
+        return [
+            "The issue is due to missing information",
+            "The issue is due to incorrect assumptions"
+        ]
+
+    def reason(self, observation: Observation):
+        hypotheses = self.generate_hypotheses(observation)
+        evidence_used = {}
+        rejected = []
+        accepted = None
+
+        for h in hypotheses:
+            ev = self.evidence_store.retrieve(
+                observation.context_tags + h.split()[:2]
+            )
+
+            if len(ev) < 1:
+                self.hypothesis_memory.reject(h, "No supporting evidence")
+                rejected.append(h)
+                continue
+
+            evidence_used[h] = [e.content for e in ev]
+            accepted = h
+            break
+
+        action = None
+        if accepted:
+            action = f"Investigate: {accepted}"
+
+        trace = ReasoningTrace(
+            observation=observation,
+            hypotheses=hypotheses,
+            evidence_used=evidence_used,
+            conclusion=accepted,
+            action=action,
+            rejected_hypotheses=rejected,
+            notes="Accepted first hypothesis with sufficient evidence"
+        )
+
+        return trace
