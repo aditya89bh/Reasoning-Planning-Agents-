@@ -60,3 +60,22 @@ class ReasoningTrace:
     notes: str
 
 # ---------- Evidence Store ----------
+
+class EvidenceStore:
+    def __init__(self):
+        self.evidence = []
+
+    def add(self, content: str, tags: List[str]):
+        fp = stable_hash(normalize(content))
+        self.evidence.append(Evidence(content, tags, fp))
+
+    def retrieve(self, tags: List[str], top_k=3):
+        scored = []
+        for e in self.evidence:
+            score = jaccard(tags, e.tags)
+            if score > 0:
+                scored.append((score, e))
+        scored.sort(reverse=True, key=lambda x: x[0])
+        return [e for _, e in scored[:top_k]]
+
+# ---------- Hypothesis Memory ----------
