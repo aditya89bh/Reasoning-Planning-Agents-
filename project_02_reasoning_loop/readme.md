@@ -80,3 +80,33 @@ Detects when:
 
 ---
 
+## Why This Matters
+
+This is proto-thinking.
+
+Not chain-of-thought theater, but **controlled cognition**:
+- hypotheses compete
+- evidence is required
+- confidence is updated
+- contradictions trigger revision
+
+---
+
+## Non-Toy Extensions
+
+- Reject conclusions with weak evidence
+- Force multiple competing hypotheses
+- Store rejected conclusions with reasons
+- Add “insufficient evidence” as a first-class outcome
+- Add tool-based evidence (search, database, sensors, logs)
+
+---
+
+## Success Criteria
+
+The agent should:
+- produce reasoning that cites evidence
+- refuse to conclude when evidence is weak
+- maintain a trace that’s easy to inspect
+- avoid contradictions with stored facts
+
