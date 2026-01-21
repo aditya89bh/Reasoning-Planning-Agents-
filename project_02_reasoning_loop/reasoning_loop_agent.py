@@ -32,3 +32,31 @@ def jaccard(a: List[str], b: List[str]) -> float:
     return len(sa & sb) / len(sa | sb)
 
 # ---------- Data Models ----------
+
+@dataclass
+class Observation:
+    question: str
+    context_tags: List[str]
+
+@dataclass
+class Hypothesis:
+    hypothesis: str
+    fingerprint: str
+
+@dataclass
+class Evidence:
+    content: str
+    tags: List[str]
+    fingerprint: str
+
+@dataclass
+class ReasoningTrace:
+    observation: Observation
+    hypotheses: List[str]
+    evidence_used: Dict[str, List[str]]
+    conclusion: Optional[str]
+    action: Optional[str]
+    rejected_hypotheses: List[str]
+    notes: str
+
+# ---------- Evidence Store ----------
