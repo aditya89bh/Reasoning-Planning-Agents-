@@ -58,3 +58,25 @@ A store of “evidence snippets” from:
 - curated facts
 - tool outputs (later)
 - human notes (later)
+
+### 4. Evidence Linking
+Each reasoning step must link to:
+- at least 1 evidence item
+- a similarity score or match rationale
+
+### 5. Reasoning Trace
+A complete trace of:
+- hypotheses considered
+- evidence retrieved
+- reasoning steps
+- rejection reasons
+- contradiction flags
+- final conclusion + action proposal
+
+### 6. Contradiction Detection
+Detects when:
+- the conclusion conflicts with known facts
+- the reasoning contains a direct negation conflict
+
+---
+
