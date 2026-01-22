@@ -19,3 +19,28 @@ They either:
 What’s missing is a **goal decomposition layer**.
 
 ---
+
+## What This Project Builds
+
+A system that converts:
+
+High-level goal  
+→ structured subgoals  
+→ executable actions  
+
+with:
+- dependency tracking
+- partial reuse
+- rollback on failure
+
+---
+
+## Key Components
+
+- Goal node (intent)
+- Subgoal tree
+- Action nodes
+- Dependency resolution
+- Completion state tracking
+
+---
