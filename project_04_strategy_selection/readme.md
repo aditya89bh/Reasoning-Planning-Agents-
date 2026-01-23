@@ -64,3 +64,34 @@ Stores:
 This allows experience to accumulate at the **strategy level**.
 
 ---
+
+### 3. Context Matching
+Incoming situations are represented as:
+- context tags (e.g. `high_stakes`, `time_pressure`, `debug`)
+
+Strategies are scored using:
+- similarity between context and strategy tags
+- learned confidence from past use
+
+---
+
+### 4. Selection Policy
+The agent selects a strategy using:
+- exploitation (best-known strategy)
+- exploration (occasionally try alternatives)
+
+This prevents early lock-in and enables adaptation.
+
+---
+
+### 5. Confidence Update
+After a strategy is chosen:
+- its confidence is updated
+- usage is tracked
+- trust evolves over time
+
+Strategies that work become dominant.
+Strategies that fail slowly fade.
+
+---
+
