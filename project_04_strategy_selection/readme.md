@@ -41,3 +41,26 @@ It **chooses how to think and act**.
 
 ---
 
+## Key Components
+
+### 1. Strategy Template
+Each strategy includes:
+- name and description
+- context tags it applies to
+- confidence score
+- usage history
+
+Strategies are **patterns**, not plans.
+
+---
+
+### 2. Strategy Memory
+Stores:
+- all known strategies
+- confidence levels
+- usage counts
+- last-used timestamps
+
+This allows experience to accumulate at the **strategy level**.
+
+---
