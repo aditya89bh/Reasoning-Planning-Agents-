@@ -100,3 +100,62 @@ Replanning is controlled, not reactive.
 
 ---
 
+### 6. Goal Abandonment
+If confidence drops below a critical threshold:
+- the goal is deactivated
+- further execution is halted
+
+Abandonment is treated as an intelligent outcome,
+not a failure.
+
+---
+
+## Why This Matters
+
+This project introduces a defining property of intelligence:
+
+> **Knowing when to persist, adapt, or stop.**
+
+Without long-horizon planning:
+- autonomy is brittle
+- agents over-optimize short-term signals
+- systems spiral under uncertainty
+
+With it:
+- goals remain coherent over time
+- effort is allocated intelligently
+- failure is contained rather than compounded
+
+---
+
+## Relationship to Other Projects
+
+- **Project 01:** Learning from past outcomes
+- **Project 02:** Evidence-grounded reasoning
+- **Project 03:** Goal decomposition and structure
+- **Project 04:** Strategy selection
+- **Project 05:** Failure-aware adaptation
+- **Project 06:** Long-horizon persistence and control
+
+Together, these form a complete cognitive architecture for agents.
+
+---
+
+## Mental Model
+
+> Short-horizon agents act.  
+> Long-horizon agents commit, monitor, and adapt.
+
+This project enables commitment.
+
+---
+
+## Success Criteria
+
+The agent should:
+- maintain goals across multiple checkpoints
+- detect drift reliably
+- replan deliberately
+- abandon goals when confidence collapses
+
+If this works, the agent demonstrates **autonomy**, not scripted behavior.
