@@ -75,3 +75,24 @@ Failures are categorized into meaningful causes such as:
 This allows different recovery behaviors per failure type.
 
 ---
+
+### 4. Plan Mutation Logic
+When generating a new plan:
+- actions that failed before are detected
+- constraints like `avoid:<action>` are injected
+- unsafe actions are replaced with safer alternatives
+
+The agent does not retry blindly.
+It **adapts the plan**.
+
+---
+
+### 5. Preventive Constraints
+Constraints are added automatically to future plans, such as:
+- avoiding specific actions
+- forcing review steps
+- preferring conservative variants
+
+Constraints shape future behavior without hardcoding logic.
+
+---
