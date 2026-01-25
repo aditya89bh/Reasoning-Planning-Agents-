@@ -133,3 +133,33 @@ This is essential for real-world agents.
 Together, these form a robust decision-making stack.
 
 ---
+
+## Mental Model
+
+> A junior agent retries.  
+> A senior agent adapts.
+
+This project turns retrying into adapting.
+
+---
+
+## Success Criteria
+
+The agent should:
+- record execution failures explicitly
+- attribute failures to meaningful causes
+- mutate future plans to avoid known failures
+- inject preventive constraints automatically
+
+If this works, the agent demonstrates **experience-based learning**, not trial-and-error.
+
+---
+
+## Next Step
+
+The next layer is **Project 06: Long-Horizon Planning**, where the agent:
+- maintains goals across time
+- detects drift
+- replans intelligently over long sequences
+
+Failure-aware planning is a prerequisite for long-horizon autonomy.
